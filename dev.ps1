@@ -29,8 +29,8 @@ if ( $args.count -gt 0 ) {
             break;
         }
 
-        "nginx" {
-            docker-compose exec app service nginx $commandargs;
+        "nginx-restart" {
+            docker-compose exec app supervisorctl restart nginx $commandargs;
         }
 
         "artisan" {

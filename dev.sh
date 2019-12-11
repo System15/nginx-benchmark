@@ -18,6 +18,9 @@ if [ $# -gt 0 ]; then
 
         elif [ "$1" == "bash" ]; then
             docker-compose exec app bash "$@";
+
+        elif [ "$1" == "nginx-restart" ]; then
+            docker-compose exec app supervisorctl restart nginx "$@";
         
         elif [ "$1" == "artisan" ]; then
             docker-compose exec app php artisan "$@";
