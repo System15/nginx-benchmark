@@ -12,6 +12,11 @@ if ( $args.count -gt 0 ) {
             break;
         }
 
+        "stop-all" {
+            docker container stop $(docker ps -q);
+            break;
+        }
+
         "rebuild" {
             docker-compose down;
             docker-compose build $commandargs;

@@ -7,6 +7,9 @@ if [ $# -gt 0 ]; then
 
         elif [ "$1" == "stop" ]; then
             docker-compose down;
+
+        elif [ "$1" == "stop-all" ]; then
+            docker container stop `docker ps -q`;
         
         elif [ "$1" == "rebuild" ]; then
             docker-compose down;
