@@ -19,7 +19,7 @@ server {
 
     location = /mirror {
         internal;
-        proxy_pass http://localhost:8080;
+        proxy_pass https://example.com;
     }
 
     location ~ \.php$ {
