@@ -31,6 +31,12 @@ if ( $args.count -gt 0 ) {
 
         "nginx-restart" {
             docker-compose exec app supervisorctl restart nginx $commandargs;
+            break;
+        }
+
+        "hey" {
+            docker-compose run hey $commandargs;
+            break;
         }
 
         "artisan" {

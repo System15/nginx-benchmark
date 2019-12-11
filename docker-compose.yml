@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/app
       dockerfile: Dockerfile
-    image: ${DOCKER_APP_PREFIX-nginx-mirror}/app:latest
+    image: ${DOCKER_APP_PREFIX-nginx-benchmark}/app:latest
     networks:
       - appnet
     volumes:
@@ -15,6 +15,10 @@ services:
       - 8081:81
       - 8082:82
     working_dir: /var/www/html
+  hey:
+    image: ricoli/hey:latest
+    networks:
+      - appnet
 networks:
   appnet:
     driver: bridge
