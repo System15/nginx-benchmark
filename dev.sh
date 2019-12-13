@@ -20,7 +20,7 @@ if [ $# -gt 0 ]; then
             docker-compose exec app bash "$@";
 
         elif [ "$1" == "nginx-restart" ]; then
-            docker-compose exec app supervisorctl restart nginx "$@";
+            docker-compose exec app bash -c "nginx -t && supervisorctl restart nginx";
 
         elif [ "$1" == "hey" ]; then
             docker-compose run hey "$@";
