@@ -14,6 +14,7 @@ services:
       - 8080:80
       - 8081:81
       - 8082:82
+      - 8083:83
     working_dir: /var/www/html
   hey:
     image: ricoli/hey:latest
